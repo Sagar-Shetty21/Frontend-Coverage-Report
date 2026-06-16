@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -116,31 +116,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// @ts-expect-error - no types available for xxhashjs
 import XXH from 'xxhashjs';
 &nbsp;
@@ -154,32 +154,32 @@ import XXH from 'xxhashjs';
  * @param {string} priceRate - The selected price rate (e.g. 'standard-rate')
  * @returns {string} - A key in the format "bundle_&lt;12-char-hash&gt;"
  */
-export const generateAssociationKey = <span class="fstat-no" title="function not covered" >(</span>
-<span class="cstat-no" title="statement not covered" >  mainSku: string,</span>
-<span class="cstat-no" title="statement not covered" >  addonSkus: string[] = [],</span>
-<span class="cstat-no" title="statement not covered" >  optionSkus: string[] = [],</span>
-<span class="cstat-no" title="statement not covered" >  priceRate: string = '',</span>
-<span class="cstat-no" title="statement not covered" >): string =&gt; {</span>
+export const generateAssociationKey = (
+  mainSku: string,
+  addonSkus: string[] = [],
+  optionSkus: string[] = [],
+  priceRate: string = '',
+): string =&gt; {
   // 1. NORMALIZE: Sort arrays to ensure order-independence
-<span class="cstat-no" title="statement not covered" >  const configObject = {</span>
-<span class="cstat-no" title="statement not covered" >    m: mainSku,</span>
-<span class="cstat-no" title="statement not covered" >    a: [...addonSkus].filter(Boolean).sort(),</span>
-<span class="cstat-no" title="statement not covered" >    o: [...optionSkus].filter(Boolean).sort(),</span>
-<span class="cstat-no" title="statement not covered" >    p: priceRate,</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
+  const configObject = {
+    m: mainSku,
+    a: [...addonSkus].filter(Boolean).sort(),
+    o: [...optionSkus].filter(Boolean).sort(),
+    p: priceRate,
+  };
 &nbsp;
   // 2. STRINGIFY: Create a unique string representation
-<span class="cstat-no" title="statement not covered" >  const jsonString = JSON.stringify(configObject);</span>
+  const jsonString = JSON.stringify(configObject);
 &nbsp;
   // 3. HASH: Generate hash using xxHash (64-bit)
   // Seed is 0xCAFEBABE (arbitrary constant)
-<span class="cstat-no" title="statement not covered" >  const hash = XXH.h64(jsonString, 0xcafebabe).toString(16);</span>
+  const hash = XXH.h64(jsonString, 0xcafebabe).toString(16);
 &nbsp;
   // Take first 12 chars (enough for uniqueness in this context)
-<span class="cstat-no" title="statement not covered" >  const shortHash = hash.substring(0, 12);</span>
+  const shortHash = hash.substring(0, 12);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return shortHash;</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+  return shortHash;
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -187,7 +187,7 @@ export const generateAssociationKey = <span class="fstat-no" title="function not
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-16T07:40:43.966Z
+                at 2026-06-16T11:34:03.466Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

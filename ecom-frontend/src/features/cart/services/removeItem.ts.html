@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -84,45 +84,45 @@
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CartView, CartGroupView, CTLineItem } from '../types/cartTypes';
-<span class="cstat-no" title="statement not covered" >import { updateCart } from '../utils/cartUtil';</span>
+import { updateCart } from '../utils/cartUtil';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export async function removeItem(</span>
-<span class="cstat-no" title="statement not covered" >  contextItem: CartGroupView | CTLineItem,</span>
-<span class="cstat-no" title="statement not covered" >  existingCart: CartView | null = null,</span>
-<span class="cstat-no" title="statement not covered" >): Promise&lt;CartView | null&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const actions: Array&lt;{ action: string; lineItemId: string }&gt; = [];</span>
+export async function removeItem(
+  contextItem: CartGroupView | CTLineItem,
+  existingCart: CartView | null = null,
+): Promise&lt;CartView | null&gt; {
+  const actions: Array&lt;{ action: string; lineItemId: string }&gt; = [];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if ('mainItem' in contextItem &amp;&amp; contextItem.mainItem &amp;&amp; Array.isArray(contextItem.addOns)) {</span>
-<span class="cstat-no" title="statement not covered" >    const itemsToRemove = [contextItem.mainItem, ...contextItem.addOns];</span>
-<span class="cstat-no" title="statement not covered" >    itemsToRemove.forEach((item) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      actions.push({ action: 'removeLineItem', lineItemId: item.id });</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >  } else if ('id' in contextItem &amp;&amp; contextItem.id) {</span>
-<span class="cstat-no" title="statement not covered" >    actions.push({ action: 'removeLineItem', lineItemId: contextItem.id });</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  if ('mainItem' in contextItem &amp;&amp; contextItem.mainItem &amp;&amp; Array.isArray(contextItem.addOns)) {
+    const itemsToRemove = [contextItem.mainItem, ...contextItem.addOns];
+    itemsToRemove.forEach((item) =&gt; {
+      actions.push({ action: 'removeLineItem', lineItemId: item.id });
+    });
+  } else if ('id' in contextItem &amp;&amp; contextItem.id) {
+    actions.push({ action: 'removeLineItem', lineItemId: contextItem.id });
+  }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return updateCart(actions, existingCart);</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+  return updateCart(actions, existingCart);
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -130,7 +130,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-16T07:40:43.966Z
+                at 2026-06-16T11:34:03.466Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

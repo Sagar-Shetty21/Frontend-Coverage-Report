@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.63% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.63% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -109,33 +109,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 &nbsp;
-const formatNumber = <span class="fstat-no" title="function not covered" >(num: number): string =&gt; num.toString().padStart(2, '0');</span>
+const formatNumber = (num: number): string =&gt; num.toString().padStart(2, '0');
 &nbsp;
 export interface TimerCardProps {
     value: number;
@@ -143,29 +143,29 @@ export interface TimerCardProps {
     prevValue: number;
 }
 &nbsp;
-const TimerCard = <span class="fstat-no" title="function not covered" >({ value, label, prevValue }: TimerCardProps) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const isChanging = value !== prevValue;</span>
+const TimerCard = ({ value, label, prevValue }: TimerCardProps) =&gt; {
+    const isChanging = value !== prevValue;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className="flex flex-col items-center min-w-[45px]"&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div className="relative h-[45px] overflow-hidden mb-0"&gt; {/* Adjusted height to fit number line-height */}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div key={value} className={`flex flex-col ${isChanging ? 'animate-scroll-up' : ''}`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {isChanging &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;span className="font-montserrat text-[32px] font-bold leading-[1.4] tracking-[-0.02em] tabular-nums text-center text-white flex items-center justify-center"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {formatNumber(prevValue)}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/span&gt;</span>
+    return (
+        &lt;div className="flex flex-col items-center min-w-[45px]"&gt;
+            &lt;div className="relative h-[45px] overflow-hidden mb-0"&gt; {/* Adjusted height to fit number line-height */}
+                &lt;div key={value} className={`flex flex-col ${isChanging ? 'animate-scroll-up' : ''}`}&gt;
+                    {isChanging &amp;&amp; (
+                        &lt;span className="font-montserrat text-[32px] font-bold leading-[1.4] tracking-[-0.02em] tabular-nums text-center text-white flex items-center justify-center"&gt;
+                            {formatNumber(prevValue)}
+                        &lt;/span&gt;
                     )}
-<span class="cstat-no" title="statement not covered" >                    &lt;span className="font-montserrat text-[32px] font-bold leading-[1.4] tracking-[-0.02em] tabular-nums text-center text-white flex items-center justify-center"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {formatNumber(value)}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;span className="font-inter text-[14px] font-normal leading-[1.5] text-gray-200 text-center"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {label}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+                    &lt;span className="font-montserrat text-[32px] font-bold leading-[1.4] tracking-[-0.02em] tabular-nums text-center text-white flex items-center justify-center"&gt;
+                        {formatNumber(value)}
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;span className="font-inter text-[14px] font-normal leading-[1.5] text-gray-200 text-center"&gt;
+                {label}
+            &lt;/span&gt;
+        &lt;/div&gt;
     );
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;
 export default TimerCard;
 &nbsp;</pre></td></tr></table></pre>
@@ -175,7 +175,7 @@ export default TimerCard;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-16T07:40:43.966Z
+                at 2026-06-16T11:34:03.466Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

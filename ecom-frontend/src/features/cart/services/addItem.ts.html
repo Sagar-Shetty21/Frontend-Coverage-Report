@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">5.88% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/17</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">5.88% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/17</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -92,55 +92,55 @@
 <a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { addToCart as addToCartApi, addItemsToCart as addItemsToCartApi } from '../api/cartApi';
 import { CartView } from '../types/cartTypes';
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export async function addItem(</span></span>
-<span class="cstat-no" title="statement not covered" >  productId: string,</span>
-<span class="cstat-no" title="statement not covered" >  variantId: number,</span>
-<span class="cstat-no" title="statement not covered" >  custom: Record&lt;string, unknown&gt;,</span>
-<span class="cstat-no" title="statement not covered" >  quantity = 1,</span>
-<span class="cstat-no" title="statement not covered" >  externalPrice?: { centAmount: number; currencyCode: string },</span>
-<span class="cstat-no" title="statement not covered" >): Promise&lt;CartView | null&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return addToCartApi(productId, variantId, custom, quantity, externalPrice?.centAmount);</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+export async function addItem(
+  productId: string,
+  variantId: number,
+  custom: Record&lt;string, unknown&gt;,
+  quantity = 1,
+  externalPrice?: { centAmount: number; currencyCode: string },
+): Promise&lt;CartView | null&gt; {
+  return addToCartApi(productId, variantId, custom, quantity, externalPrice?.centAmount);
+}
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export async function addItems(</span></span>
-<span class="cstat-no" title="statement not covered" >  items: Array&lt;{</span>
+export async function addItems(
+  items: Array&lt;{
     productId: string;
     variantId: number;
     custom?: Record&lt;string, unknown&gt;;
     quantity?: number;
     externalPrice?: { centAmount: number; currencyCode: string };
   }&gt;,
-<span class="cstat-no" title="statement not covered" >): Promise&lt;CartView | null&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return addItemsToCartApi(</span>
-<span class="cstat-no" title="statement not covered" >    items.map((i) =&gt; ({ ...i, externalPrice: i.externalPrice?.centAmount })),</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+): Promise&lt;CartView | null&gt; {
+  return addItemsToCartApi(
+    items.map((i) =&gt; ({ ...i, externalPrice: i.externalPrice?.centAmount })),
+  );
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -148,7 +148,7 @@ import { CartView } from '../types/cartTypes';
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-16T07:40:43.966Z
+                at 2026-06-16T11:34:03.466Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
