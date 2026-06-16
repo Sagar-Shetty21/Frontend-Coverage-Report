@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -109,34 +109,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 &nbsp;
 interface PaymentMethodItemProps {
@@ -146,34 +146,34 @@ interface PaymentMethodItemProps {
     className?: string; // Additional classes for the container
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >const PaymentMethodItem: React.FC&lt;PaymentMethodItemProps&gt; = ({ expanded, onToggle, children, className = '' }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (expanded) {</span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                className={`w-full text-left border-[1px] rounded-[6px] p-[20px] bg-white transition-all duration-200 border-[#030407] ${className}`}</span>
+const PaymentMethodItem: React.FC&lt;PaymentMethodItemProps&gt; = ({ expanded, onToggle, children, className = '' }) =&gt; {
+    if (expanded) {
+        return (
+            &lt;div
+                className={`w-full text-left border-[1px] rounded-[6px] p-[20px] bg-white transition-all duration-200 border-[#030407] ${className}`}
             &gt;
-<span class="cstat-no" title="statement not covered" >                {children}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+                {children}
+            &lt;/div&gt;
         );
-<span class="cstat-no" title="statement not covered" >    }</span>
+    }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;button</span>
-<span class="cstat-no" title="statement not covered" >            type="button"</span>
-<span class="cstat-no" title="statement not covered" >            aria-expanded={false}</span>
-<span class="cstat-no" title="statement not covered" >            onClick={() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                if (onToggle) {</span>
-<span class="cstat-no" title="statement not covered" >                    onToggle();</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >            }}</span>
-<span class="cstat-no" title="statement not covered" >            className={`w-full text-left border-[1px] rounded-[6px] p-[20px] bg-white transition-all duration-200 border-[#D0D5DD] cursor-pointer hover:border-gray-400 ${className}`}</span>
+    return (
+        &lt;button
+            type="button"
+            aria-expanded={false}
+            onClick={() =&gt; {
+                if (onToggle) {
+                    onToggle();
+                }
+            }}
+            className={`w-full text-left border-[1px] rounded-[6px] p-[20px] bg-white transition-all duration-200 border-[#D0D5DD] cursor-pointer hover:border-gray-400 ${className}`}
         &gt;
-<span class="cstat-no" title="statement not covered" >            {children}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/button&gt;</span>
+            {children}
+        &lt;/button&gt;
     );
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default PaymentMethodItem;</span>
+export default PaymentMethodItem;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -181,7 +181,7 @@ interface PaymentMethodItemProps {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-16T13:19:39.142Z
+                at 2026-06-16T17:56:52.946Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

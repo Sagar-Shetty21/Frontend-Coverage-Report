@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,21 +98,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 &nbsp;
 interface PaymentInputGroupProps {
@@ -123,21 +123,21 @@ interface PaymentInputGroupProps {
     className?: string; // Optional class for the outer div
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >const PaymentInputGroup: React.FC&lt;PaymentInputGroupProps&gt; = ({ label, htmlFor, error, children, className = '' }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className={className}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;label htmlFor={htmlFor} className="block text-sm font-medium mb-2 text-[#667085]"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {label}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/label&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {children}</span>
-<span class="cstat-no" title="statement not covered" >            {error &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p className="text-red-500 text-sm mt-1"&gt;{error}&lt;/p&gt;</span>
+const PaymentInputGroup: React.FC&lt;PaymentInputGroupProps&gt; = ({ label, htmlFor, error, children, className = '' }) =&gt; {
+    return (
+        &lt;div className={className}&gt;
+            &lt;label htmlFor={htmlFor} className="block text-sm font-medium mb-2 text-[#667085]"&gt;
+                {label}
+            &lt;/label&gt;
+            {children}
+            {error &amp;&amp; (
+                &lt;p className="text-red-500 text-sm mt-1"&gt;{error}&lt;/p&gt;
             )}
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+        &lt;/div&gt;
     );
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default PaymentInputGroup;</span>
+export default PaymentInputGroup;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -145,7 +145,7 @@ interface PaymentInputGroupProps {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-16T13:19:39.142Z
+                at 2026-06-16T17:56:52.946Z
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

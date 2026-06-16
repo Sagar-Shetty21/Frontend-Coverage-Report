@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,17 +94,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
@@ -115,18 +115,18 @@ interface BenefitItemProps {
     text: string;
 }
 &nbsp;
-const BenefitItem: React.FC&lt;BenefitItemProps&gt; = <span class="fstat-no" title="function not covered" >({ text }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className="flex items-center gap-2 text-gray-600"&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;img src={checkIcon} alt="check" className="w-[12px] h-[12px] flex-shrink-0" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;span</span>
-<span class="cstat-no" title="statement not covered" >                className="font-['Noto_Sans'] text-[14px] font-normal leading-[24px] text-[rgba(0,43,102,0.70)] m-0 tracking-normal tabular-nums lining-nums align-bottom"</span>
+const BenefitItem: React.FC&lt;BenefitItemProps&gt; = ({ text }) =&gt; {
+    return (
+        &lt;div className="flex items-center gap-2 text-gray-600"&gt;
+            &lt;img src={checkIcon} alt="check" className="w-[12px] h-[12px] flex-shrink-0" /&gt;
+            &lt;span
+                className="font-['Noto_Sans'] text-[14px] font-normal leading-[24px] text-[rgba(0,43,102,0.70)] m-0 tracking-normal tabular-nums lining-nums align-bottom"
             &gt;
-<span class="cstat-no" title="statement not covered" >                {text}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+                {text}
+            &lt;/span&gt;
+        &lt;/div&gt;
     );
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;
 export default BenefitItem;
 &nbsp;</pre></td></tr></table></pre>
@@ -136,7 +136,7 @@ export default BenefitItem;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-16T13:19:39.142Z
+                at 2026-06-16T17:56:52.946Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
