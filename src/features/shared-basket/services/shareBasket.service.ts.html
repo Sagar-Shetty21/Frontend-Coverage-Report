@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,70 +101,70 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Shared Basket — sender-side API services.
  * Extracted from useCartPageShare.js.
  */
-<span class="cstat-no" title="statement not covered" >import { CART_CREATE_SHARE_TOKEN, EMAIL_SHARE_BASKET } from '../../../shared/constants/api';</span>
-<span class="cstat-no" title="statement not covered" >import * as apiClient from '../../../shared/services/apiClient';</span>
+import { CART_CREATE_SHARE_TOKEN, EMAIL_SHARE_BASKET } from '../../../shared/constants/api';
+import * as apiClient from '../../../shared/services/apiClient';
 import { CreateShareTokenPayload, ShareEmailPayload } from '../types/sharedBasket.types';
 &nbsp;
 /** Create a share token for the given cart and return the share URL. */
-<span class="cstat-no" title="statement not covered" >export async function createShareToken(payload: CreateShareTokenPayload): Promise&lt;string&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const response = await apiClient.post(CART_CREATE_SHARE_TOKEN, payload);</span>
+export async function createShareToken(payload: CreateShareTokenPayload): Promise&lt;string&gt; {
+  const response = await apiClient.post(CART_CREATE_SHARE_TOKEN, payload);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!response.ok) {</span>
-<span class="cstat-no" title="statement not covered" >    const errorData = await response.json().catch(() =&gt; ({}));</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error(</span>
-<span class="cstat-no" title="statement not covered" >      (errorData as { error?: string }).error || 'Failed to create share link',</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  if (!response.ok) {
+    const errorData = await response.json().catch(() =&gt; ({}));
+    throw new Error(
+      (errorData as { error?: string }).error || 'Failed to create share link',
+    );
+  }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const { shareUrl } = await response.json();</span>
-<span class="cstat-no" title="statement not covered" >  return shareUrl as string;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+  const { shareUrl } = await response.json();
+  return shareUrl as string;
+}
 &nbsp;
 /** Send the share basket email to the recipient. */
-<span class="cstat-no" title="statement not covered" >export async function sendShareEmail(payload: ShareEmailPayload): Promise&lt;void&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const response = await apiClient.post(EMAIL_SHARE_BASKET, payload);</span>
+export async function sendShareEmail(payload: ShareEmailPayload): Promise&lt;void&gt; {
+  const response = await apiClient.post(EMAIL_SHARE_BASKET, payload);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!response.ok) {</span>
-<span class="cstat-no" title="statement not covered" >    const errorData = await response.json().catch(() =&gt; ({}));</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error(</span>
-<span class="cstat-no" title="statement not covered" >      (errorData as { error?: string }).error || 'Failed to send email',</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+  if (!response.ok) {
+    const errorData = await response.json().catch(() =&gt; ({}));
+    throw new Error(
+      (errorData as { error?: string }).error || 'Failed to send email',
+    );
+  }
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -172,7 +172,7 @@ import { CreateShareTokenPayload, ShareEmailPayload } from '../types/sharedBaske
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-17T17:24:43.755Z
+                at 2026-06-17T17:41:15.093Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
