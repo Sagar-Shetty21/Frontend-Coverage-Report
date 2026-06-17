@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -104,8 +104,8 @@
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,38 +113,38 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import userIcon from '../../../assets/icons/header/oneInformBar/user.svg';</span>
-<span class="cstat-no" title="statement not covered" >import { AUTH_MESSAGES } from '../constants/auth.constants';</span>
+import userIcon from '../../../assets/icons/header/oneInformBar/user.svg';
+import { AUTH_MESSAGES } from '../constants/auth.constants';
 &nbsp;
 interface UserProps {
     loggedIn: boolean;
@@ -152,34 +152,34 @@ interface UserProps {
     onClick: () =&gt; void;
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >const User: React.FC&lt;UserProps&gt; = ({ loggedIn, userName, onClick }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (loggedIn) {</span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                className={`flex items-center pl-[10px] md:pl-[17px] h-[20px] text-white pr-[10px] md:pr-[17px] border-r border-gray-600`}</span>
+const User: React.FC&lt;UserProps&gt; = ({ loggedIn, userName, onClick }) =&gt; {
+    if (loggedIn) {
+        return (
+            &lt;div
+                className={`flex items-center pl-[10px] md:pl-[17px] h-[20px] text-white pr-[10px] md:pr-[17px] border-r border-gray-600`}
             &gt;
-<span class="cstat-no" title="statement not covered" >                &lt;img src={userIcon} alt="User" className="w-6 h-6 md:w-[20px] md:h-[20px] md:mr-[4px]" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;span className="hidden md:inline"&gt;{`${AUTH_MESSAGES.WELCOME} ${userName}`}&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+                &lt;img src={userIcon} alt="User" className="w-6 h-6 md:w-[20px] md:h-[20px] md:mr-[4px]" /&gt;
+                &lt;span className="hidden md:inline"&gt;{`${AUTH_MESSAGES.WELCOME} ${userName}`}&lt;/span&gt;
+            &lt;/div&gt;
         );
-<span class="cstat-no" title="statement not covered" >    }</span>
+    }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className="flex items-center pl-[10px] md:pl-[17px]"&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                type="button"</span>
-<span class="cstat-no" title="statement not covered" >                onClick={onClick}</span>
-<span class="cstat-no" title="statement not covered" >                className="flex items-center h-[20px] cursor-pointer hover:text-gray-200 text-white pr-0 bg-transparent border-none"</span>
-<span class="cstat-no" title="statement not covered" >                aria-label={AUTH_MESSAGES.LOG_IN}</span>
+    return (
+        &lt;div className="flex items-center pl-[10px] md:pl-[17px]"&gt;
+            &lt;button
+                type="button"
+                onClick={onClick}
+                className="flex items-center h-[20px] cursor-pointer hover:text-gray-200 text-white pr-0 bg-transparent border-none"
+                aria-label={AUTH_MESSAGES.LOG_IN}
             &gt;
-<span class="cstat-no" title="statement not covered" >                &lt;img src={userIcon} alt="" aria-hidden="true" className="w-6 h-6 md:w-[20px] md:h-[20px] md:mr-[4px]" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;span className="hidden md:inline"&gt;{AUTH_MESSAGES.LOG_IN}&lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+                &lt;img src={userIcon} alt="" aria-hidden="true" className="w-6 h-6 md:w-[20px] md:h-[20px] md:mr-[4px]" /&gt;
+                &lt;span className="hidden md:inline"&gt;{AUTH_MESSAGES.LOG_IN}&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
     );
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default User;</span>
+export default User;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -187,7 +187,7 @@ interface UserProps {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-17T06:55:38.455Z
+                at 2026-06-17T07:35:19.931Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

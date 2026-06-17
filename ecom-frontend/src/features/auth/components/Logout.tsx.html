@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -91,56 +91,56 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import logoutIcon from '../../../assets/icons/header/oneInformBar/logout.svg';</span>
+import logoutIcon from '../../../assets/icons/header/oneInformBar/logout.svg';
 &nbsp;
 interface LogoutProps {
     isLoading: boolean;
     onClick: () =&gt; void;
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >const Logout: React.FC&lt;LogoutProps&gt; = ({ isLoading, onClick }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className={`flex items-center pl-[10px] md:pl-[17px] ${isLoading ? 'opacity-50' : ''}`}&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;button</span>
-<span class="cstat-no" title="statement not covered" >                type="button"</span>
-<span class="cstat-no" title="statement not covered" >                onClick={onClick}</span>
-<span class="cstat-no" title="statement not covered" >                disabled={isLoading}</span>
-<span class="cstat-no" title="statement not covered" >                aria-label={isLoading ? 'Logging out...' : 'Logout'}</span>
-<span class="cstat-no" title="statement not covered" >                className={`flex items-center h-[20px] cursor-pointer hover:text-gray-200 transition-colors text-white bg-transparent border-none ${isLoading ? 'cursor-not-allowed' : ''}`}</span>
+const Logout: React.FC&lt;LogoutProps&gt; = ({ isLoading, onClick }) =&gt; {
+    return (
+        &lt;div className={`flex items-center pl-[10px] md:pl-[17px] ${isLoading ? 'opacity-50' : ''}`}&gt;
+            &lt;button
+                type="button"
+                onClick={onClick}
+                disabled={isLoading}
+                aria-label={isLoading ? 'Logging out...' : 'Logout'}
+                className={`flex items-center h-[20px] cursor-pointer hover:text-gray-200 transition-colors text-white bg-transparent border-none ${isLoading ? 'cursor-not-allowed' : ''}`}
             &gt;
-<span class="cstat-no" title="statement not covered" >                &lt;img src={logoutIcon} alt="" aria-hidden="true" className="w-6 h-6 md:w-[20px] md:h-[20px]" /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/button&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+                &lt;img src={logoutIcon} alt="" aria-hidden="true" className="w-6 h-6 md:w-[20px] md:h-[20px]" /&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
     );
-<span class="cstat-no" title="statement not covered" >};</span>
+};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default Logout;</span>
+export default Logout;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -148,7 +148,7 @@ interface LogoutProps {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-17T06:55:38.455Z
+                at 2026-06-17T07:35:19.931Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
