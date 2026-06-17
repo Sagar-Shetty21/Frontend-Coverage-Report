@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,64 +101,64 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Build CT product search query args.
  *
  * @param {any} ctx - Values from AppContext (currency, country, channelId, customerGroupId, storeKey).
  *                    If omitted, falls back to sessionStorage for backward compat.
  */
-<span class="cstat-no" title="statement not covered" >export function setQueryArgs(ctx?: Record&lt;string, unknown&gt;): Record&lt;string, string&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const currency = (ctx?.currency as string) ?? sessionStorage.getItem('currency');</span>
-<span class="cstat-no" title="statement not covered" >  const country = (ctx?.country as string) ?? sessionStorage.getItem('country');</span>
-<span class="cstat-no" title="statement not covered" >  const channelId = (ctx?.channelId as string) ?? sessionStorage.getItem('channelId');</span>
-<span class="cstat-no" title="statement not covered" >  const customerGroupId = (ctx?.customerGroupId as string) ?? sessionStorage.getItem('customerGroupId');</span>
-<span class="cstat-no" title="statement not covered" >  const storeKey = (ctx?.storeKey as string) ?? sessionStorage.getItem('storeKey');</span>
+export function setQueryArgs(ctx?: Record&lt;string, unknown&gt;): Record&lt;string, string&gt; {
+  const currency = (ctx?.currency as string) ?? sessionStorage.getItem('currency');
+  const country = (ctx?.country as string) ?? sessionStorage.getItem('country');
+  const channelId = (ctx?.channelId as string) ?? sessionStorage.getItem('channelId');
+  const customerGroupId = (ctx?.customerGroupId as string) ?? sessionStorage.getItem('customerGroupId');
+  const storeKey = (ctx?.storeKey as string) ?? sessionStorage.getItem('storeKey');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const queryArgs: Record&lt;string, string&gt; = {};</span>
+  const queryArgs: Record&lt;string, string&gt; = {};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (currency) {</span>
-<span class="cstat-no" title="statement not covered" >    queryArgs.priceCurrency = currency;</span>
-<span class="cstat-no" title="statement not covered" >    if (country) {</span>
-<span class="cstat-no" title="statement not covered" >      queryArgs.priceCountry = country;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (channelId) {</span>
-<span class="cstat-no" title="statement not covered" >      queryArgs.priceChannel = channelId;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (customerGroupId) {</span>
-<span class="cstat-no" title="statement not covered" >      queryArgs.priceCustomerGroup = customerGroupId;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  if (storeKey) {</span>
-<span class="cstat-no" title="statement not covered" >    queryArgs.storeProjection = storeKey;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return queryArgs;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+  if (currency) {
+    queryArgs.priceCurrency = currency;
+    if (country) {
+      queryArgs.priceCountry = country;
+    }
+    if (channelId) {
+      queryArgs.priceChannel = channelId;
+    }
+    if (customerGroupId) {
+      queryArgs.priceCustomerGroup = customerGroupId;
+    }
+  }
+  if (storeKey) {
+    queryArgs.storeProjection = storeKey;
+  }
+  return queryArgs;
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -166,7 +166,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-17T17:41:15.093Z
+                at 2026-06-17T17:49:59.196Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

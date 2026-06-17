@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -89,46 +89,46 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Persistent anonymous ID for guest cart (cookie-based).
  */
-export const getAnonymousId = <span class="fstat-no" title="function not covered" >(): string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const cookies = document.cookie.split(';');</span>
-<span class="cstat-no" title="statement not covered" >  for (const cookie of cookies) {</span>
-<span class="cstat-no" title="statement not covered" >    const [name, value] = cookie.trim().split('=');</span>
-<span class="cstat-no" title="statement not covered" >    if (name === 'anonymousCartId') {</span>
-<span class="cstat-no" title="statement not covered" >      return decodeURIComponent(value);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+export const getAnonymousId = (): string =&gt; {
+  const cookies = document.cookie.split(';');
+  for (const cookie of cookies) {
+    const [name, value] = cookie.trim().split('=');
+    if (name === 'anonymousCartId') {
+      return decodeURIComponent(value);
+    }
+  }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const anonId = crypto.randomUUID</span>
-<span class="cstat-no" title="statement not covered" >    ? crypto.randomUUID()</span>
-<span class="cstat-no" title="statement not covered" >    : 'anon-' + Date.now() + '-' + Math.random().toString(36).substring(2, 11);</span>
+  const anonId = crypto.randomUUID
+    ? crypto.randomUUID()
+    : 'anon-' + Date.now() + '-' + Math.random().toString(36).substring(2, 11);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const expiryDate = new Date();</span>
-<span class="cstat-no" title="statement not covered" >  expiryDate.setFullYear(expiryDate.getFullYear() + 1);</span>
-<span class="cstat-no" title="statement not covered" >  document.cookie = `anonymousCartId=${encodeURIComponent(anonId)}; expires=${expiryDate.toUTCString()}; path=/; SameSite=Lax`;</span>
+  const expiryDate = new Date();
+  expiryDate.setFullYear(expiryDate.getFullYear() + 1);
+  document.cookie = `anonymousCartId=${encodeURIComponent(anonId)}; expires=${expiryDate.toUTCString()}; path=/; SameSite=Lax`;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return anonId;</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+  return anonId;
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -136,7 +136,7 @@ export const getAnonymousId = <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-17T17:41:15.093Z
+                at 2026-06-17T17:49:59.196Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

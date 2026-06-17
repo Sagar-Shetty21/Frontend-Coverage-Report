@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">5.55% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">5.55% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -95,55 +95,55 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Format a date range for display
  * Handles both single-day and multi-day date ranges
  */
-export const formatDateRange = <span class="fstat-no" title="function not covered" >(startDate: string | null, endDate: string | null): string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (!startDate || !endDate) return 'Dates TBA';</span>
+export const formatDateRange = (startDate: string | null, endDate: string | null): string =&gt; {
+    if (!startDate || !endDate) return 'Dates TBA';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    const start = new Date(startDate);</span>
-<span class="cstat-no" title="statement not covered" >    const end = new Date(endDate);</span>
+    const start = new Date(startDate);
+    const end = new Date(endDate);
 &nbsp;
     // Using custom format for DD MMM, YYYY
-<span class="cstat-no" title="statement not covered" >    const formatDate = (date: Date) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const day = date.getDate();</span>
-<span class="cstat-no" title="statement not covered" >        const month = date.toLocaleDateString('en', { month: 'short' });</span>
-<span class="cstat-no" title="statement not covered" >        const year = date.getFullYear();</span>
-<span class="cstat-no" title="statement not covered" >        return { day, month, year };</span>
-<span class="cstat-no" title="statement not covered" >    };</span>
+    const formatDate = (date: Date) =&gt; {
+        const day = date.getDate();
+        const month = date.toLocaleDateString('en', { month: 'short' });
+        const year = date.getFullYear();
+        return { day, month, year };
+    };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (startDate === endDate) {</span>
-<span class="cstat-no" title="statement not covered" >        const { day, month, year } = formatDate(start);</span>
-<span class="cstat-no" title="statement not covered" >        return `${day} ${month}, ${year}`;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    if (startDate === endDate) {
+        const { day, month, year } = formatDate(start);
+        return `${day} ${month}, ${year}`;
+    }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    const startFormatted = formatDate(start);</span>
-<span class="cstat-no" title="statement not covered" >    const endFormatted = formatDate(end);</span>
-<span class="cstat-no" title="statement not covered" >    return `${startFormatted.day} ${startFormatted.month}, ${startFormatted.year} - ${endFormatted.day} ${endFormatted.month}, ${endFormatted.year}`;</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+    const startFormatted = formatDate(start);
+    const endFormatted = formatDate(end);
+    return `${startFormatted.day} ${startFormatted.month}, ${startFormatted.year} - ${endFormatted.day} ${endFormatted.month}, ${endFormatted.year}`;
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -151,7 +151,7 @@ export const formatDateRange = <span class="fstat-no" title="function not covere
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-17T17:41:15.093Z
+                at 2026-06-17T17:49:59.196Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
