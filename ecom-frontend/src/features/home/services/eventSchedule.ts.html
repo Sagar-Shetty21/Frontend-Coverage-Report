@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -103,28 +103,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">206x</span>
+<span class="cline-any cline-yes">206x</span>
+<span class="cline-any cline-yes">98x</span>
+<span class="cline-any cline-yes">98x</span>
+<span class="cline-any cline-yes">98x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Event schedule helpers: date formatting and locale-aware text extraction.
  */
@@ -133,29 +133,29 @@
  * Formats a start/end date pair into a human-readable range string.
  * Example: "Apr 14 - 16, 2026"
  */
-export const formatEventDates = <span class="fstat-no" title="function not covered" >(startDateStr: string | null, endDateStr: string | null): string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (!startDateStr || !endDateStr) return '';</span>
-<span class="cstat-no" title="statement not covered" >    const start = new Date(startDateStr);</span>
-<span class="cstat-no" title="statement not covered" >    const end = new Date(endDateStr);</span>
-<span class="cstat-no" title="statement not covered" >    const month = start.toLocaleString('default', { month: 'short' });</span>
-<span class="cstat-no" title="statement not covered" >    const startDay = start.getDate();</span>
-<span class="cstat-no" title="statement not covered" >    const endDay = end.getDate();</span>
-<span class="cstat-no" title="statement not covered" >    const year = start.getFullYear();</span>
-<span class="cstat-no" title="statement not covered" >    return `${month} ${startDay} - ${endDay}, ${year}`;</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+export const formatEventDates = (startDateStr: string | null, endDateStr: string | null): string =&gt; {
+    if (!startDateStr || !endDateStr) return '';
+    const start = new Date(startDateStr);
+    const end = new Date(endDateStr);
+    const month = start.toLocaleString('default', { month: 'short' });
+    const startDay = start.getDate();
+    const endDay = end.getDate();
+    const year = start.getFullYear();
+    return `${month} ${startDay} - ${endDay}, ${year}`;
+};
 &nbsp;
 /**
  * Extracts locale-aware text from a Commercetools localised string object.
  * Falls back to English, then the first available value.
  */
-export const getLocText = <span class="fstat-no" title="function not covered" >(val: unknown): string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (!val) return '';</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof val === 'object' &amp;&amp; val !== null) {</span>
-<span class="cstat-no" title="statement not covered" >        const obj = val as Record&lt;string, string&gt;;</span>
-<span class="cstat-no" title="statement not covered" >        return obj['en'] || obj['en-US'] || Object.values(obj)[0] || '';</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return String(val);</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+export const getLocText = (val: unknown): string =&gt; {
+    if (!val) return '';
+    if (typeof val === 'object' &amp;&amp; val !== null) {
+        const obj = val as Record&lt;string, string&gt;;
+        return obj['en'] || obj['en-US'] || Object.values(obj)[0] || '';
+    }
+    return String(val);
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -163,7 +163,7 @@ export const getLocText = <span class="fstat-no" title="function not covered" >(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-16T17:56:52.946Z
+                at 2026-06-17T06:55:38.455Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
