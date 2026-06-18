@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.38% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/13</span>
+                <span class='fraction'>13/13</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">80% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.38% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -99,24 +99,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, useEffect } from 'react';
 &nbsp;
 /**
@@ -125,25 +125,25 @@
  * @param query - The media query string (e.g., '(max-width: 991px)')
  * @returns boolean - Whether the query matches
  */
-export const useMediaQuery = <span class="fstat-no" title="function not covered" >(query: string): boolean =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const [matches, setMatches] = useState&lt;boolean&gt;(false);</span>
+export const useMediaQuery = (query: string): boolean =&gt; {
+    const [matches, setMatches] = useState&lt;boolean&gt;(false);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (typeof window === 'undefined') return;</span>
+    useEffect(() =&gt; {
+        if (typeof window === 'undefined') <span class="branch-0 cbranch-no" title="branch not covered" >return;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        const mediaQuery = window.matchMedia(query);</span>
+        const mediaQuery = window.matchMedia(query);
         
         // Use an initial check
-<span class="cstat-no" title="statement not covered" >        setMatches(mediaQuery.matches);</span>
+        setMatches(mediaQuery.matches);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        const handler = (event: MediaQueryListEvent) =&gt; setMatches(event.matches);</span>
+        const handler = (event: MediaQueryListEvent) =&gt; setMatches(event.matches);
         
-<span class="cstat-no" title="statement not covered" >        mediaQuery.addEventListener('change', handler);</span>
-<span class="cstat-no" title="statement not covered" >        return () =&gt; mediaQuery.removeEventListener('change', handler);</span>
-<span class="cstat-no" title="statement not covered" >    }, [query]);</span>
+        mediaQuery.addEventListener('change', handler);
+        return () =&gt; mediaQuery.removeEventListener('change', handler);
+    }, [query]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return matches;</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+    return matches;
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -151,7 +151,7 @@ export const useMediaQuery = <span class="fstat-no" title="function not covered"
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-17T18:02:19.916Z
+                at 2026-06-18T06:58:46.213Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
