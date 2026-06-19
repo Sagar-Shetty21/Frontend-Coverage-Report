@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.96% </span>
+                <span class="strong">92.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>238/256</span>
+                <span class='fraction'>233/252</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.15% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>56/65</span>
+                <span class='fraction'>54/63</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.96% </span>
+                <span class="strong">92.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>238/256</span>
+                <span class='fraction'>233/252</span>
             </div>
         
             
@@ -373,9 +373,7 @@
 <a name='L308'></a><a href='#L308'>308</a>
 <a name='L309'></a><a href='#L309'>309</a>
 <a name='L310'></a><a href='#L310'>310</a>
-<a name='L311'></a><a href='#L311'>311</a>
-<a name='L312'></a><a href='#L312'>312</a>
-<a name='L313'></a><a href='#L313'>313</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L311'></a><a href='#L311'>311</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -478,17 +476,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -790,16 +786,14 @@ const OrderSummary: React.FC&lt;OrderSummaryProps&gt; = ({
 &nbsp;
     const hasDiscount = (displayedDiscount?.centAmount ?? 0) &gt; 0;
 &nbsp;
-    const catalogSavingsCents = discountBreakdown.reduce(
-        (sum, item) =&gt; item.label !== DISCOUNT_BREAKDOWN_LABELS.PROMO_CODE ? sum + item.<span class="branch-0 cbranch-no" title="branch not covered" >centAmount : sum,</span>
-        0
-    );
+    // subtotal = originalCatalogSubtotalCents (catalog price restored in CheckoutPage).
+    // Subtract only the promo code discount so Sub Total reflects applied coupon savings.
+    const promoCodeCents = discountBreakdown
+        .filter(item =&gt; item.label === DISCOUNT_BREAKDOWN_LABELS.PROMO_CODE)
+        .reduce((sum, item) =&gt; sum + item.centAmount, 0);
 &nbsp;
-    const displayedSubtotal = catalogSavingsCents &gt; 0
-        ? {
-            ...subtotal,
-            centAmount: subtotal.centAmount + catalogSavingsCents,
-          }
+    const displayedSubtotal = promoCodeCents &gt; <span class="branch-0 cbranch-no" title="branch not covered" >0</span>
+<span class="cstat-no" title="statement not covered" >        ? { ...subtotal, centAmount: subtotal.centAmount - promoCodeCents }</span>
         : subtotal;
 &nbsp;
     const hasTaxData = Boolean(tax &amp;&amp; Array.isArray(tax.aggregatedTaxLines) &amp;&amp; tax.aggregatedTaxLines.length &gt; 0);
@@ -929,7 +923,7 @@ const OrderSummary: React.FC&lt;OrderSummaryProps&gt; = ({
                         ref={scrollRef}
                         className={`flex flex-col overflow-y-auto flex-1 min-h-[80px] pb-[20px] ${<span class="branch-0 cbranch-no" title="branch not covered" >isScrolling ? 'pr-[20px]' : '</span>'} [&amp;::-webkit-scrollbar]:w-[16px] [&amp;::-webkit-scrollbar-track]:bg-transparent [&amp;::-webkit-scrollbar-thumb]:border-[4px] [&amp;::-webkit-scrollbar-thumb]:border-solid [&amp;::-webkit-scrollbar-thumb]:border-transparent [&amp;::-webkit-scrollbar-thumb]:bg-clip-padding [&amp;::-webkit-scrollbar-thumb]:bg-white/20 [&amp;::-webkit-scrollbar-thumb]:rounded-full`}
                     &gt;
-                        &lt;LineItemsPreview lineItems={lineItems} showTaxBreakdown={hasTaxData} /&gt;
+                        &lt;LineItemsPreview lineItems={lineItems} /&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
 &nbsp;
@@ -978,7 +972,7 @@ const OrderSummary: React.FC&lt;OrderSummaryProps&gt; = ({
                                     ref={mobileScrollRef}
                                     className={`w-full px-0 mt-[20px] pb-[20px] min-h-[120px] max-h-[calc(100vh-498px)] tablet:max-h-[calc(100vh-452px)] overflow-y-auto ${<span class="branch-0 cbranch-no" title="branch not covered" >isMobileScrolling ? 'pr-[20px]' : '</span>'} [&amp;::-webkit-scrollbar]:w-[16px] [&amp;::-webkit-scrollbar-track]:bg-transparent [&amp;::-webkit-scrollbar-thumb]:border-[4px] [&amp;::-webkit-scrollbar-thumb]:border-solid [&amp;::-webkit-scrollbar-thumb]:border-transparent [&amp;::-webkit-scrollbar-thumb]:bg-clip-padding [&amp;::-webkit-scrollbar-thumb]:bg-white/20 [&amp;::-webkit-scrollbar-thumb]:rounded-full`}
                                 &gt;
-                                    &lt;LineItemsPreview lineItems={lineItems} showTaxBreakdown={hasTaxData} /&gt;
+                                    &lt;LineItemsPreview lineItems={lineItems} /&gt;
                                 &lt;/div&gt;
                             )}
                         &lt;/div&gt;
@@ -1006,7 +1000,7 @@ export default OrderSummary;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-18T10:53:16.569Z
+                at 2026-06-19T12:12:14.903Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

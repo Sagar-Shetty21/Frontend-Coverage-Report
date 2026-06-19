@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.13% </span>
+                <span class="strong">86.02% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>118/137</span>
+                <span class='fraction'>117/136</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.13% </span>
+                <span class="strong">86.02% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>118/137</span>
+                <span class='fraction'>117/136</span>
             </div>
         
             
@@ -296,9 +296,7 @@
 <a name='L231'></a><a href='#L231'>231</a>
 <a name='L232'></a><a href='#L232'>232</a>
 <a name='L233'></a><a href='#L233'>233</a>
-<a name='L234'></a><a href='#L234'>234</a>
-<a name='L235'></a><a href='#L235'>235</a>
-<a name='L236'></a><a href='#L236'>236</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L234'></a><a href='#L234'>234</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -385,6 +383,7 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
@@ -522,9 +521,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -616,10 +612,11 @@ const LineItem: FC&lt;LineItemProps&gt; = ({
     }
 &nbsp;
     // Resolve delegate / attendee type
-    const attendeeType =
+    const rawAttendeeType =
         item.<span class="branch-0 cbranch-no" title="branch not covered" >delegateRate ||</span>
 <span class="cstat-no" title="statement not covered" >        (item.custom?.fields?.<span class="branch-0 cbranch-no" title="branch not covered" >delegateRate as string | undefined) ||</span></span>
 <span class="cstat-no" title="statement not covered" >        '';</span>
+    const attendeeType = rawAttendeeType.replace(/\s+Rate$/i, '');
 &nbsp;
     // Parsing Add-ons
     let addOnsList: Array&lt;string | { name: string }&gt; = item.addOns || [];
@@ -711,15 +708,15 @@ const LineItem: FC&lt;LineItemProps&gt; = ({
                     endDate={item.endDate}
                     locale={locale}
                     format="MiniBasket"
-                    className="flex items-center gap-[2px]"
-                    icon={&lt;img src={CalenderIcon} alt="Date" style={{ width: 13, height: 15 }} /&gt;}
-                    textStyle={{ ...subTextStyle, display: 'inline-block', width: 96, height: 18 }}
+                    className="flex items-center gap-[4px] flex-shrink-0"
+                    icon={&lt;img src={CalenderIcon} alt="Date" style={{ width: 8, height: 14 }} /&gt;}
+                    textStyle={{ ...subTextStyle, height: 18 }}
                     textClassName="whitespace-nowrap"
                 /&gt;
 &nbsp;
                 {/* Attendee Type */}
                 {attendeeType &amp;&amp; (
-                    &lt;span className="flex items-center gap-[2px]"&gt;
+                    &lt;span className="flex items-center gap-[4px] flex-shrink-0"&gt;
                         &lt;img src={AttendeeTypeIcon} alt="Attendee type" style={{ width: 13, height: 15 }} /&gt;
                         &lt;span style={subTextStyle} className="whitespace-nowrap"&gt;
                             {attendeeType}
@@ -729,10 +726,10 @@ const LineItem: FC&lt;LineItemProps&gt; = ({
 &nbsp;
                 {/* Add ons count */}
                 {addOnCount &gt; 0 &amp;&amp; (
-                    &lt;span className="flex items-center gap-[2px]"&gt;
+                    &lt;span className="flex items-center gap-[4px] flex-shrink-0"&gt;
                         &lt;img src={AddOnIcon} alt="Add ons" style={{ width: 13, height: 15 }} /&gt;
                         &lt;span
-                            style={{ ...subTextStyle, display: 'inline-block', width: 56, height: 18 }}
+                            style={{ ...subTextStyle, height: 18 }}
                             className="whitespace-nowrap"
                         &gt;
                             {addOnCount} {addOnCount === 1 ? 'Add on' : 'Add ons'}
@@ -756,10 +753,7 @@ const LineItem: FC&lt;LineItemProps&gt; = ({
                 )}
 &nbsp;
                 {/* Price */}
-                &lt;span
-                    className="text-right ml-[16px]"
-                    style={{ color: '#002B66', fontWeight: 400, fontSize: 14, lineHeight: '24px', width: 186, height: 24, display: 'inline-block' }}
-                &gt;
+                &lt;span className="text-right ml-auto font-['Noto_Sans'] font-semibold text-[16px] leading-[24px] text-[#002B66]"&gt;
                     {formattedPrice}
                 &lt;/span&gt;
             &lt;/div&gt;
@@ -775,7 +769,7 @@ export default LineItem;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-18T10:53:16.569Z
+                at 2026-06-19T12:12:14.903Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

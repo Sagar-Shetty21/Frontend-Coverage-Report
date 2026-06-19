@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>123/123</span>
+                <span class='fraction'>130/130</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>34/34</span>
+                <span class='fraction'>38/38</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>7/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>123/123</span>
+                <span class='fraction'>130/130</span>
             </div>
         
             
@@ -222,8 +222,23 @@
 <a name='L157'></a><a href='#L157'>157</a>
 <a name='L158'></a><a href='#L158'>158</a>
 <a name='L159'></a><a href='#L159'>159</a>
-<a name='L160'></a><a href='#L160'>160</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -287,6 +302,17 @@
 <span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">99x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">99x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">99x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">99x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
@@ -353,6 +379,8 @@
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -387,6 +415,7 @@ import { appConfig } from '../../../../config/app-config';
 import { CLICK_OUTSIDE_EVENT } from '../../../../shared/constants/event.constants';
 import { formatPrice } from '../../../../shared/utils/format';
 import { TOOLTIP_CONSTANTS, KEYBOARD_KEYS } from '../../constants/discountBreakdown.constants';
+import { ORDER_SUMMARY } from '../../constants/orderSummary.constants';
 import { DiscountBreakdownItem } from '../../services/checkoutDiscountBreakdown.service';
 &nbsp;
 import InfoIcon from '@/shared/components/InfoIcon';
@@ -444,6 +473,17 @@ const DiscountBreakdownTooltip = ({ items, currencyCode }: DiscountBreakdownTool
 &nbsp;
     document.addEventListener(CLICK_OUTSIDE_EVENT, handleOutsideClick);
     return () =&gt; document.removeEventListener(CLICK_OUTSIDE_EVENT, handleOutsideClick);
+  }, [showTooltip]);
+&nbsp;
+  // Close on scroll — works on all devices (mobile, tablet, and zoomed desktop).
+  // capture:true catches scroll from any scrollable ancestor. passive:true keeps scrolling smooth.
+  useEffect(() =&gt; {
+    if (!showTooltip) return;
+&nbsp;
+    const handleScroll = <span class="fstat-no" title="function not covered" >() =&gt; setShowTooltip(false);</span>
+&nbsp;
+    window.addEventListener(ORDER_SUMMARY.EVENT_SCROLL, handleScroll, { capture: true, passive: true });
+    return () =&gt; window.removeEventListener(ORDER_SUMMARY.EVENT_SCROLL, handleScroll, { capture: true });
   }, [showTooltip]);
 &nbsp;
   const handleToggle = () =&gt; {
@@ -512,7 +552,9 @@ const DiscountBreakdownTooltip = ({ items, currencyCode }: DiscountBreakdownTool
           ref={tooltipRef}
           id={tooltipId}
           role={TOOLTIP_CONSTANTS.ROLE_TOOLTIP}
-          className="absolute bottom-full -right-5 mb-3 pointer-events-none flex flex-col items-start px-3 py-2 gap-1 rounded-lg shadow-lg text-white text-xs font-normal font-['Inter',_sans-serif] leading-[18px] bg-[#002B66] w-[189px] max-w-[189px] z-[100]"
+          // pointer-events default (auto) — tapping inside the bubble must keep it open.
+          // The outside-click handler ignores events within containerRef, which wraps this bubble.
+          className="absolute bottom-full -right-5 mb-3 flex flex-col items-start px-3 py-2 gap-1 rounded-lg shadow-lg text-white text-xs font-normal font-['Inter',_sans-serif] leading-[18px] bg-[#002B66] w-[189px] max-w-[189px] z-[100]"
           style={overflowOffset !== 0 ? { transform: `translateX(${overflowOffset}px)` } : undefined}
         &gt;
           {items.map((item) =&gt; (
@@ -547,7 +589,7 @@ export default DiscountBreakdownTooltip;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-18T10:53:16.569Z
+                at 2026-06-19T12:12:14.903Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

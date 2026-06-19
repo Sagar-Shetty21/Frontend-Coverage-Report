@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.72% </span>
+                <span class="strong">97.86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>172/176</span>
+                <span class='fraction'>183/187</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.72% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>68/91</span>
+                <span class='fraction'>72/96</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.72% </span>
+                <span class="strong">97.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>172/176</span>
+                <span class='fraction'>183/187</span>
             </div>
         
             
@@ -288,7 +288,21 @@
 <a name='L223'></a><a href='#L223'>223</a>
 <a name='L224'></a><a href='#L224'>224</a>
 <a name='L225'></a><a href='#L225'>225</a>
-<a name='L226'></a><a href='#L226'>226</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -334,7 +348,6 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -343,6 +356,12 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -497,6 +516,15 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
@@ -559,7 +587,6 @@ export const normalizeTaxResult = (taxResult: TaxApiResponse, currentCart: Cart)
   const discountAmount = (currentCart.<span class="branch-0 cbranch-no" title="branch not covered" >totalDiscount ?? 0) / 1</span>00;
   const apiLineItems: OneSourceLineItem[] = taxResult?.data?.lineItems ?? [];
   const taxRate = apiLineItems[0]?.priceData?.taxRate ?? 0;
-  const taxAmount = subtotal * taxRate;
 &nbsp;
   // Build lineReference → quantity map so aggregateTaxLines can multiply
   // authorityTaxAmount by the actual cart quantity for each line item.
@@ -569,6 +596,12 @@ export const normalizeTaxResult = (taxResult: TaxApiResponse, currentCart: Cart)
     quantityByLineRef[idx + 1] = item.<span class="branch-0 cbranch-no" title="branch not covered" >quantity ?? 1;</span>
   });
 &nbsp;
+  const aggregatedTaxLines = aggregateTaxLines(apiLineItems, quantityByLineRef);
+  const taxLinesSum = aggregatedTaxLines.reduce((sum, line) =&gt; sum + line.taxAmount, 0);
+  const taxAmount = (aggregatedTaxLines.length &gt; 0 &amp;&amp; Math.abs(taxLinesSum - subtotal * taxRate) &lt; 1.0)
+    ? taxLinesSum
+    : subtotal * taxRate;
+&nbsp;
   return {
     raw: taxResult,
     taxAmount,
@@ -577,7 +610,7 @@ export const normalizeTaxResult = (taxResult: TaxApiResponse, currentCart: Cart)
     subtotal,
     discountAmount,
     lineItems: apiLineItems,
-    aggregatedTaxLines: aggregateTaxLines(apiLineItems, quantityByLineRef),
+    aggregatedTaxLines,
   };
 };
 &nbsp;
@@ -721,20 +754,29 @@ export const buildExactTaxRequest = (
       eventLocation,
       tax: { isExempt: { all: false } },
       customAttributes: [{ name: null, value: null }],
-      lineItems: (cart.<span class="branch-0 cbranch-no" title="branch not covered" >lineItems ?? []).f</span>ilter(Boolean).map((item, idx) =&gt; ({
-        lineReference: idx + 1,
-        transactionType: getAttr(item, TAX_ATTRIBUTES.TRANSACTION_TYPE),
-        pointOfTitleTransfer: getAttr(item, TAX_ATTRIBUTES.TITLE_TRANSFER) || DEFAULT_TITLE_TRANSFER,
-        priceData: {
-          unitAmount: Math.round((item.price?.value?.<span class="branch-0 cbranch-no" title="branch not covered" >centAmount ?? 0) / 1</span>00),
-          productData: {
-            name: getName(item),
-            description: productDescriptions[item.productId],
-            categoryCode: getAttr(item, TAX_ATTRIBUTES.PRODUCT_TAX_CATEGORY),
+      lineItems: (cart.<span class="branch-0 cbranch-no" title="branch not covered" >lineItems ?? []).f</span>ilter(Boolean).map((item, idx) =&gt; {
+        // Use the discounted unit price if CT has applied any line-level discounts;
+        // otherwise fall back to the catalogue price.
+        const discountedUnitCents =
+          item.<span class="branch-0 cbranch-no" title="branch not covered" >discountedPricePerQuantity?.[0]?.discountedPrice?.value?.centAmount;</span>
+        const unitAmount = Math.round(
+          (discountedUnitCents ?? item.price?.value?.<span class="branch-0 cbranch-no" title="branch not covered" >centAmount ?? 0) / 1</span>00
+        );
+        return {
+          lineReference: idx + 1,
+          transactionType: getAttr(item, TAX_ATTRIBUTES.TRANSACTION_TYPE),
+          pointOfTitleTransfer: getAttr(item, TAX_ATTRIBUTES.TITLE_TRANSFER) || DEFAULT_TITLE_TRANSFER,
+          priceData: {
+            unitAmount,
+            productData: {
+              name: getName(item),
+              description: productDescriptions[item.productId],
+              categoryCode: getAttr(item, TAX_ATTRIBUTES.PRODUCT_TAX_CATEGORY),
+            },
           },
-        },
-        customAttributes: [{ name: null, value: null }],
-      })),
+          customAttributes: [{ name: null, value: null }],
+        };
+      }),
     },
   };
 };
@@ -745,7 +787,7 @@ export const buildExactTaxRequest = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-18T10:53:16.569Z
+                at 2026-06-19T12:12:14.903Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

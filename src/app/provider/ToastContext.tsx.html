@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.65% </span>
+                <span class="strong">94.11% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>44/46</span>
+                <span class='fraction'>48/51</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.65% </span>
+                <span class="strong">94.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>44/46</span>
+                <span class='fraction'>48/51</span>
             </div>
         
             
@@ -148,9 +148,18 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -217,6 +226,11 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">48x</span>
@@ -236,6 +250,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { createContext, useState, useCallback, useRef, ReactNode } from 'react';
 &nbsp;
 import ToastContainer from '../../shared/components/ToastContainer';
+import { TOAST_TYPES, DEFAULT_TOAST_DURATION } from '../../shared/constants/toast.constants';
 &nbsp;
 interface Toast {
   id: number | string;
@@ -248,6 +263,7 @@ interface Toast {
 interface ToastContextType {
   showSuccess: (title: string, message?: string) =&gt; number | string | null;
   showError: (title: string, message?: string) =&gt; number | string | null;
+  showWarning: (title: string, message?: string) =&gt; number | string | null;
   addToast: (title: string, message?: string, duration?: number, type?: string) =&gt; number | string | null;
   removeToast: (id: number | string) =&gt; void;
 }
@@ -260,7 +276,7 @@ export const ToastProvider = ({ children }: { children: ReactNode }) =&gt; {
   const [toasts, setToasts] = useState&lt;Toast[]&gt;([]);
   const recentToastsRef = useRef&lt;Map&lt;string, number&gt;&gt;(new Map()); // Track recent toasts to prevent duplicates
 &nbsp;
-  const addToast = useCallback((title: string, message: string = '', duration: number = 8000, type: string = 'success') =&gt; {
+  const addToast = useCallback((title: string, message: string = '', duration: number = DEFAULT_TOAST_DURATION, type: string = TOAST_TYPES.SUCCESS) =&gt; {
     // Create a unique key for this toast based on title, message, and type
     const toastKey = `${type}-${title}-${message}`;
     const now = Date.now();
@@ -295,16 +311,21 @@ export const ToastProvider = ({ children }: { children: ReactNode }) =&gt; {
   }, []);
 &nbsp;
   const showSuccess = useCallback((title: string, message: string = '') =&gt; {
-    return addToast(title, message, 8000, 'success');
+    return addToast(title, message, DEFAULT_TOAST_DURATION, TOAST_TYPES.SUCCESS);
   }, [addToast]);
 &nbsp;
   const showError = useCallback((title: string, message: string = '') =&gt; {
-    return addToast(title, message, 8000, 'error');
+    return addToast(title, message, DEFAULT_TOAST_DURATION, TOAST_TYPES.ERROR);
+  }, [addToast]);
+&nbsp;
+  const showWarning = useCallback((title: string, message: string = '') =&gt; {
+<span class="cstat-no" title="statement not covered" >    return addToast(title, message, DEFAULT_TOAST_DURATION, TOAST_TYPES.WARNING);</span>
   }, [addToast]);
 &nbsp;
   const value: ToastContextType = {
     showSuccess,
     showError,
+    showWarning,
     addToast,
     removeToast,
   };
@@ -325,7 +346,7 @@ export default ToastContext;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-18T10:53:16.569Z
+                at 2026-06-19T12:12:14.903Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

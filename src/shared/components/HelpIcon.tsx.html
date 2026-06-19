@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">16.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>5/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">16.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>5/31</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -151,33 +151,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -209,34 +209,34 @@ interface HelpIconProps {
  *   width/height : 16px (default)
  *   colour       : var(--colour-icon-default-subtle, #6F7A90)
  */
-const HelpIcon = ({
-  size = 16,
-  className = '',
-  'aria-hidden': ariaHidden,
-  'aria-label': ariaLabel = ARIA_LABELS.HELP,
-}: HelpIconProps) =&gt; (
-  &lt;span
-    tabIndex={ariaHidden ? <span class="branch-0 cbranch-no" title="branch not covered" >-1 : 0}</span>
-    role={ariaHidden ? <span class="branch-0 cbranch-no" title="branch not covered" >undefined : 'img'}</span>
-    aria-label={ariaHidden ? <span class="branch-0 cbranch-no" title="branch not covered" >undefined : ariaLabel}</span>
-    aria-hidden={<span class="branch-0 cbranch-no" title="branch not covered" >ariaHidden || undefined}</span>
-    className={[
-      'inline-flex items-center justify-center rounded-full',
-      'outline-none',
-      FOCUS_RING_STYLE,
-      GROUP_FOCUS_RING_STYLE,
-      className,
-    ].join(' ')}
-    style={{ flexShrink: 0 }}
+const HelpIcon = <span class="fstat-no" title="function not covered" >({</span>
+<span class="cstat-no" title="statement not covered" >  size = 16,</span>
+<span class="cstat-no" title="statement not covered" >  className = '',</span>
+<span class="cstat-no" title="statement not covered" >  'aria-hidden': ariaHidden,</span>
+<span class="cstat-no" title="statement not covered" >  'aria-label': ariaLabel = ARIA_LABELS.HELP,</span>
+<span class="cstat-no" title="statement not covered" >}: HelpIconProps) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >  &lt;span</span>
+<span class="cstat-no" title="statement not covered" >    tabIndex={ariaHidden ? -1 : 0}</span>
+<span class="cstat-no" title="statement not covered" >    role={ariaHidden ? undefined : 'img'}</span>
+<span class="cstat-no" title="statement not covered" >    aria-label={ariaHidden ? undefined : ariaLabel}</span>
+<span class="cstat-no" title="statement not covered" >    aria-hidden={ariaHidden || undefined}</span>
+<span class="cstat-no" title="statement not covered" >    className={[</span>
+<span class="cstat-no" title="statement not covered" >      'inline-flex items-center justify-center rounded-full',</span>
+<span class="cstat-no" title="statement not covered" >      'outline-none',</span>
+<span class="cstat-no" title="statement not covered" >      FOCUS_RING_STYLE,</span>
+<span class="cstat-no" title="statement not covered" >      GROUP_FOCUS_RING_STYLE,</span>
+<span class="cstat-no" title="statement not covered" >      className,</span>
+<span class="cstat-no" title="statement not covered" >    ].join(' ')}</span>
+<span class="cstat-no" title="statement not covered" >    style={{ flexShrink: 0 }}</span>
   &gt;
-    &lt;img
-      src={HelpIconSvg}
-      width={size}
-      height={size}
-      aria-hidden
-      className="block"
-    /&gt;
-  &lt;/span&gt;
+<span class="cstat-no" title="statement not covered" >    &lt;img</span>
+<span class="cstat-no" title="statement not covered" >      src={HelpIconSvg}</span>
+<span class="cstat-no" title="statement not covered" >      width={size}</span>
+<span class="cstat-no" title="statement not covered" >      height={size}</span>
+<span class="cstat-no" title="statement not covered" >      aria-hidden</span>
+<span class="cstat-no" title="statement not covered" >      className="block"</span>
+<span class="cstat-no" title="statement not covered" >    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >  &lt;/span&gt;</span>
 );
 &nbsp;
 export default HelpIcon;
@@ -247,7 +247,7 @@ export default HelpIcon;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-18T10:53:16.569Z
+                at 2026-06-19T12:12:14.903Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

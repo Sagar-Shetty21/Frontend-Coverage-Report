@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>100/100</span>
+                <span class='fraction'>106/106</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>100/100</span>
+                <span class='fraction'>106/106</span>
             </div>
         
             
@@ -205,7 +205,16 @@
 <a name='L140'></a><a href='#L140'>140</a>
 <a name='L141'></a><a href='#L141'>141</a>
 <a name='L142'></a><a href='#L142'>142</a>
-<a name='L143'></a><a href='#L143'>143</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -329,15 +338,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -348,6 +360,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+&nbsp;
+import PopularIcon from '../../../../assets/icons/popular.svg';
+import { PRODUCT_COPY } from '../../constants/product.constants';
 &nbsp;
 import BenefitItem from './PassBenefitItem';
 import PassHeader from './PassHeader';
@@ -407,7 +422,7 @@ const PassCard: React.FC&lt;PassCardProps&gt; = ({
         &lt;div
             className={[
                 'w-full relative',
-                isPopular &amp;&amp; !isFirst &amp;&amp; 'mt-[24px] md:mt-0',
+                isPopular &amp;&amp; !isFirst &amp;&amp; 'mt-[24px]',
                 !isEnabled &amp;&amp; 'opacity-40 pointer-events-none',
             ]
                 .filter(Boolean)
@@ -435,7 +450,7 @@ const PassCard: React.FC&lt;PassCardProps&gt; = ({
                             isActive={isActive}
                         /&gt;
 &nbsp;
-                        &lt;div className="flex flex-col items-start w-full gap-3"&gt;
+                        &lt;div className="flex flex-col items-start w-full gap-3 p-4 bg-[#F2F9FF] border border-[#DFE4EC] rounded-[6px]"&gt;
                             &lt;h4 className="font-['Noto_Sans'] text-[14px] font-medium leading-[24px] text-[#002B66] m-0 tracking-[0px]"&gt;
                                 {accessLabel ?? 'Get full access to:'}
                             &lt;/h4&gt;
@@ -471,15 +486,18 @@ const PassCard: React.FC&lt;PassCardProps&gt; = ({
 &nbsp;
             {isPopular &amp;&amp; (
                 &lt;&gt;
-                    &lt;div className="hidden md:flex absolute left-full top-[24px] flex-col items-center justify-center bg-[#1A6FE5] rounded-r-[6px] w-[22px] h-fit py-[12px] px-[2px] gap-[8px] z-[1]"&gt;
-                        &lt;span className="text-white font-['Noto_Sans'] text-[12px] font-medium leading-[18px] uppercase -rotate-90 -translate-x-[1px] whitespace-nowrap flex items-center justify-center h-[55px]"&gt;
-                            Popular
+                    {/* Mobile badge — hidden on md+ */}
+                    &lt;div className="md:hidden absolute bottom-full right-0 flex items-center gap-[6px] bg-[#0077BD] rounded-tl-[6px] rounded-tr-[6px] rounded-bl-[6px] px-3 py-[6px] z-[1]"&gt;
+                        &lt;img src={PopularIcon} alt="" aria-hidden="true" className="w-4 h-4 shrink-0" /&gt;
+                        &lt;span className="text-white font-['Noto_Sans'] text-[12px] font-medium leading-[18px] uppercase whitespace-nowrap"&gt;
+                            {PRODUCT_COPY.POPULAR_BADGE}
                         &lt;/span&gt;
                     &lt;/div&gt;
-&nbsp;
-                    &lt;div className="flex md:hidden absolute bottom-full right-[24px] items-center justify-center bg-[#1A6FE5] rounded-t-[6px] px-[12px] py-[2px] z-[1]"&gt;
-                        &lt;span className="text-white font-['Noto_Sans'] text-[12px] translate-y-[1px] font-medium leading-[18px] uppercase whitespace-nowrap"&gt;
-                            Popular
+                    {/* Desktop badge — hidden below md */}
+                    &lt;div className="hidden md:flex absolute bottom-full right-0 items-center gap-[6px] bg-[#0077BD] rounded-tl-[6px] rounded-tr-[6px] rounded-bl-[6px] px-3 py-[6px] z-[1]"&gt;
+                        &lt;img src={PopularIcon} alt="" aria-hidden="true" className="w-4 h-4 shrink-0" /&gt;
+                        &lt;span className="text-white font-['Noto_Sans'] text-[12px] font-medium leading-[18px] uppercase whitespace-nowrap"&gt;
+                            {PRODUCT_COPY.POPULAR_BADGE}
                         &lt;/span&gt;
                     &lt;/div&gt;
                 &lt;/&gt;
@@ -496,7 +514,7 @@ export default PassCard;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-18T10:53:16.569Z
+                at 2026-06-19T12:12:14.903Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

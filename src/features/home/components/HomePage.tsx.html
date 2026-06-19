@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.54% </span>
+                <span class="strong">95.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>300/314</span>
+                <span class='fraction'>307/321</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.54% </span>
+                <span class="strong">95.63% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>300/314</span>
+                <span class='fraction'>307/321</span>
             </div>
         
             
@@ -447,7 +447,11 @@
 <a name='L382'></a><a href='#L382'>382</a>
 <a name='L383'></a><a href='#L383'>383</a>
 <a name='L384'></a><a href='#L384'>384</a>
-<a name='L385'></a><a href='#L385'>385</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a>
+<a name='L388'></a><a href='#L388'>388</a>
+<a name='L389'></a><a href='#L389'>389</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -462,14 +466,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -701,7 +707,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">182x</span>
 <span class="cline-any cline-yes">182x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">182x</span>
+<span class="cline-any cline-yes">182x</span>
 <span class="cline-any cline-yes">182x</span>
 <span class="cline-any cline-yes">182x</span>
 <span class="cline-any cline-yes">182x</span>
@@ -747,7 +754,8 @@
 <span class="cline-any cline-yes">182x</span>
 <span class="cline-any cline-yes">182x</span>
 <span class="cline-any cline-yes">182x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">182x</span>
+<span class="cline-any cline-yes">182x</span>
 <span class="cline-any cline-yes">182x</span>
 <span class="cline-any cline-yes">182x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -836,6 +844,8 @@
 import ErrorBoundary from '../../../app/layout/ErrorBoundary';
 import { useAppContext } from '../../../app/provider/useAppContext';
 import { useEventContext } from '../../../app/provider/useEventContext';
+import ChooseDelegateIcon from '../../../assets/icons/pass-types/choose-delegate.svg';
+import SelectPassIcon from '../../../assets/icons/pass-types/select-pass.svg';
 import { appConfig } from '../../../config/app-config';
 import Loader from '../../../shared/components/Loader';
 import ProgressBar from '../../../shared/components/ProgressBar';
@@ -851,10 +861,10 @@ import ProductPassList from '../../product/components/ProductPassList';
 import PassConfigurationModal from '../../product/components/pass/PassConfigurationModal';
 import { MODAL_TEXT } from '../../product/constants/passConfiguration.constants';
 import type { ProductWithAddOns } from '../../product/types/product.types';
+import { HOME_COPY } from '../constants/home.constants';
 import { useBasketAction } from '../hooks/useBasketAction';
 import { useHomeProducts, getAttribute } from '../hooks/useHomeProducts';
 import type { CustomerGroup } from '../types/home.types';
-&nbsp;
 &nbsp;
 import PromoBanner from './banner/PromoBanner';
 import ContentBlock from './content-block/ContentBlock';
@@ -1084,8 +1094,9 @@ function HomePage() {
         &lt;div className="container flex flex-col lg:flex-row gap-[24px] pt-[16px] pb-[72px] md:px-[40px]"&gt;
 &nbsp;
           &lt;div className="w-full lg:w-[40%] flex flex-col"&gt;
-            &lt;h2 className="font-semibold text-[16px] text-[#203a6b] mb-[12px] md:mb-[32px] text-left"&gt;
-              1. Choose your delegate type
+            &lt;h2 className="flex items-center gap-2 font-['Noto_Sans'] text-[16px] font-semibold leading-[24px] text-[#3B485F] mb-[12px] md:mb-[32px] text-left"&gt;
+              &lt;img src={ChooseDelegateIcon} alt="" aria-hidden="true" className="w-4 h-4 shrink-0" /&gt;
+              {HOME_COPY.CHOOSE_DELEGATE_TYPE}
             &lt;/h2&gt;
             &lt;div ref={rateCardListRef}&gt;
               &lt;RateCardList
@@ -1130,8 +1141,9 @@ function HomePage() {
 &nbsp;
           &lt;div className="w-full lg:w-[60%] flex flex-col gap-8"&gt;
             &lt;div className="flex flex-col"&gt;
-              &lt;h2 className="font-semibold text-[16px] text-[#203a6b] mb-[12px] md:mb-[32px] text-left"&gt;
-                2. Choose your pass
+              &lt;h2 className="flex items-center gap-2 font-['Noto_Sans'] text-[16px] font-semibold leading-[24px] text-[#3B485F] mb-[12px] md:mb-[32px] text-left"&gt;
+                &lt;img src={SelectPassIcon} alt="" aria-hidden="true" className="w-4 h-4 shrink-0" /&gt;
+                {HOME_COPY.SELECT_A_PASS}
               &lt;/h2&gt;
               {productsError &amp;&amp; (
                 &lt;div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg"&gt;
@@ -1222,7 +1234,7 @@ export default HomePage;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-18T10:53:16.569Z
+                at 2026-06-19T12:12:14.903Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

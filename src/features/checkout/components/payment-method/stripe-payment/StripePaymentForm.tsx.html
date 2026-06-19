@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>185/185</span>
+                <span class='fraction'>189/189</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>185/185</span>
+                <span class='fraction'>189/189</span>
             </div>
         
             
@@ -299,7 +299,13 @@
 <a name='L234'></a><a href='#L234'>234</a>
 <a name='L235'></a><a href='#L235'>235</a>
 <a name='L236'></a><a href='#L236'>236</a>
-<a name='L237'></a><a href='#L237'>237</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -465,6 +471,8 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
@@ -473,6 +481,10 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
@@ -549,7 +561,7 @@ import PaymentTerms from '../shared/PaymentTerms';
 &nbsp;
 import DisabledSecureIcon from '@/assets/icons/header/checkout/disabledSecure.svg';
 import SecureIcon from '@/assets/icons/header/checkout/secure.svg';
-import HelpIcon from '@/assets/icons/help_tooltip/help_tooltip.svg';
+import InfoIcon from '@/assets/icons/info.svg';
 import CardIcon from '@/assets/icons/payment-input-form/card.svg';
 import Button from '@/shared/components/Button';
 import Tooltip from '@/shared/components/Tooltip';
@@ -690,7 +702,20 @@ const StripePaymentForm: React.FC&lt;StripePaymentFormProps&gt; = ({
                                 &lt;/PaymentInputGroup&gt;
 &nbsp;
                                 &lt;div className="relative"&gt;
-                                    &lt;PaymentInputGroup label={PAYMENT_TEXTS.CARD.LABELS.SECURITY_CODE} htmlFor={STRIPE_FIELDS.SECURITY_CODE} error={errors.securityCode}&gt;
+                                    &lt;PaymentInputGroup
+                                        label={PAYMENT_TEXTS.CARD.LABELS.SECURITY_CODE}
+                                        htmlFor={STRIPE_FIELDS.SECURITY_CODE}
+                                        error={errors.securityCode}
+                                        tooltip={
+                                            &lt;Tooltip content={PAYMENT_TEXTS.CARD.CVV_TOOLTIP} tooltipClassName="!w-[324px] !h-[124px] !whitespace-normal"&gt;
+                                                &lt;img
+                                                    src={InfoIcon}
+                                                    alt="Info"
+                                                    className="w-[16px] h-[16px] cursor-pointer"
+                                                /&gt;
+                                            &lt;/Tooltip&gt;
+                                        }
+                                    &gt;
                                         &lt;div className="relative"&gt;
                                             &lt;div className="border rounded-[6px] border-[#D0D5DD] bg-white min-h-[40px] flex items-center"&gt;
                                                 &lt;div className="w-full py-[10px] px-[16px]"&gt;
@@ -708,13 +733,6 @@ const StripePaymentForm: React.FC&lt;StripePaymentFormProps&gt; = ({
                                                     alt="Card"
                                                     className="w-5 h-5"
                                                 /&gt;
-                                                &lt;Tooltip content={PAYMENT_TEXTS.CARD.CVV_TOOLTIP}&gt;
-                                                    &lt;img
-                                                        src={HelpIcon}
-                                                        alt="Help"
-                                                        className="w-5 h-5 cursor-pointer"
-                                                    /&gt;
-                                                &lt;/Tooltip&gt;
                                             &lt;/div&gt;
                                         &lt;/div&gt;
                                     &lt;/PaymentInputGroup&gt;
@@ -778,7 +796,7 @@ export default StripePaymentForm;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-18T10:53:16.569Z
+                at 2026-06-19T12:12:14.903Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

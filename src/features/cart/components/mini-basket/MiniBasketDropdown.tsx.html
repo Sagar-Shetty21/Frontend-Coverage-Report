@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.91% </span>
+                <span class="strong">98.92% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>182/184</span>
+                <span class='fraction'>184/186</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.91% </span>
+                <span class="strong">98.92% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>182/184</span>
+                <span class='fraction'>184/186</span>
             </div>
         
             
@@ -304,12 +304,35 @@
 <a name='L239'></a><a href='#L239'>239</a>
 <a name='L240'></a><a href='#L240'>240</a>
 <a name='L241'></a><a href='#L241'>241</a>
-<a name='L242'></a><a href='#L242'>242</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -450,6 +473,8 @@
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
@@ -477,6 +502,7 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
@@ -549,8 +575,18 @@
 &nbsp;
 import LineItem from '../../../../shared/components/LineItem';
 import OrderSummary from '../../../../shared/components/OrderSummary';
+import { WHEEL_EVENT } from '../../../../shared/constants/event.constants';
 import { STORAGE_KEYS } from '../../../../shared/utils/storage';
-import { CART_COPY, CART_DEFAULTS, MINI_BASKET_CONSTANTS } from '../../constants/constants';
+import {
+  CART_COPY,
+  CART_DEFAULTS,
+  MINI_BASKET_CONSTANTS,
+  CUSTOM_FIELD_START_DATE,
+  CUSTOM_FIELD_END_DATE,
+  CUSTOM_FIELD_ASSOCIATION_KEY,
+  CUSTOM_FIELD_DELEGATE_RATE,
+  CUSTOM_FIELD_SELECTED_OPTIONS_LIST,
+} from '../../constants/constants';
 import { MiniBasketDisplayItem } from '../../types/miniBasketTypes';
 import { isPassProduct } from '../../utils/CartPageHelpers';
 &nbsp;
@@ -612,8 +648,8 @@ const MiniBasketDropdown: React.FC&lt;MiniBasketDropdownProps&gt; = ({
 <span class="cstat-no" title="statement not covered" >      e.stopPropagation();</span>
     };
 &nbsp;
-    el.addEventListener('wheel', handleWheel, { passive: false });
-    return () =&gt; el.removeEventListener('wheel', handleWheel);
+    el.addEventListener(WHEEL_EVENT, handleWheel, { passive: false });
+    return () =&gt; el.removeEventListener(WHEEL_EVENT, handleWheel);
   }, [open, isOpen]);
 &nbsp;
   if (!open &amp;&amp; !isOpen) return null;
@@ -624,7 +660,7 @@ const MiniBasketDropdown: React.FC&lt;MiniBasketDropdownProps&gt; = ({
       className="hidden md:flex md:flex-col absolute -right-[17px] top-full mt-3 w-[350px] bg-white rounded-[12px] shadow-xl ring-1 ring-gray-200 z-50 text-black"
     &gt;
       {/* ── Section A: Header (48px, bg-white) ── */}
-      &lt;div className="flex-shrink-0 w-[350px] h-[48px] flex items-center gap-[4px] px-[12px] rounded-tl-[12px] rounded-tr-[12px] box-border bg-white"&gt;
+      &lt;div className="flex-shrink-0 w-[350px] h-[48px] flex items-center gap-[4px] px-[12px] rounded-t-[8px] box-border bg-white border-b border-[#DFE4EC]"&gt;
         {/* "Order" heading */}
         &lt;span className="inline-block whitespace-nowrap w-[46px] h-[24px] text-[var(--colour-text-default-primary-heading,#002B66)] font-semibold text-[14px] leading-[24px] font-sans tracking-[0px]"&gt;
           {MINI_BASKET_CONSTANTS.TITLE}
@@ -635,8 +671,8 @@ const MiniBasketDropdown: React.FC&lt;MiniBasketDropdownProps&gt; = ({
         &lt;/span&gt;
       &lt;/div&gt;
 &nbsp;
-      {/* ── Section B: Scrollable items (bg #F9FAFB, max-h 350px) ── */}
-      &lt;div className="-basket-scrollable w-[350px] flex-1 overflow-y-auto py-[12px] pl-[12px] pr-0 box-border max-h-[350px] bg-[#F9FAFB]"&gt;
+      {/* ── Section B: Scrollable items (bg #F6F7F9, max-h 350px) ── */}
+      &lt;div className="-basket-scrollable w-[350px] flex-1 overflow-y-auto py-[12px] pl-[12px] pr-0 box-border max-h-[350px] bg-[#F6F7F9]"&gt;
         {items.length === 0 ? (
           &lt;div className="h-full flex items-center justify-center"&gt;
             &lt;p className="text-gray-500 text-sm mb-0"&gt;{MINI_BASKET_CONSTANTS.EMPTY_MESSAGE}&lt;/p&gt;
@@ -653,10 +689,10 @@ const MiniBasketDropdown: React.FC&lt;MiniBasketDropdownProps&gt; = ({
                 const mainItem =
                   groupItems.find(
                     (i) =&gt;
-                      ((i.custom?.fields?.['selectedOptionsList'] as string[] | undefined)
+                      ((i.custom?.fields?.[CUSTOM_FIELD_SELECTED_OPTIONS_LIST] as string[] | undefined)
                         ?.length ?? 0) &gt; 0,
                   ) || groupItems[0];
-                const rate = mainItem.custom?.fields?.['delegateRate'] as string | undefined;
+                const rate = mainItem.custom?.fields?.[CUSTOM_FIELD_DELEGATE_RATE] as string | undefined;
                 const rateKey = rate || CART_COPY.OTHER_RATE;
                 if (!byRate[rateKey]) byRate[rateKey] = [];
                 byRate[rateKey].push({ key, items: groupItems });
@@ -680,19 +716,21 @@ const MiniBasketDropdown: React.FC&lt;MiniBasketDropdownProps&gt; = ({
                       quantity: totalQuantity,
                       startDate:
                         (effectiveMainItem.variant?.attributes?.find(
-                          (a: { name: string; value: unknown }) =&gt; a.name === 'startDate',
+                          (a: { name: string; value: unknown }) =&gt; a.name === CUSTOM_FIELD_START_DATE,
                         )?.value as string | undefined) ||
-                        (effectiveMainItem.custom?.fields?.startDate as string | undefined) ||
+                        (effectiveMainItem.custom?.fields?.[CUSTOM_FIELD_START_DATE] as string | undefined) ||
                         effectiveMainItem.startDate,
                       endDate:
                         (effectiveMainItem.variant?.attributes?.find(
-                          (a: { name: string; value: unknown }) =&gt; a.name === 'endDate',
+                          (a: { name: string; value: unknown }) =&gt; a.name === CUSTOM_FIELD_END_DATE,
                         )?.value as string | undefined) ||
-                        (effectiveMainItem.custom?.fields?.endDate as string | undefined) ||
+                        (effectiveMainItem.custom?.fields?.[CUSTOM_FIELD_END_DATE] as string | undefined) ||
                         effectiveMainItem.endDate,
                       totalPrice: {
-                        centAmount: groupItems.reduce(
-                          (sum, i) =&gt; sum + (i.<span class="branch-0 cbranch-no" title="branch not covered" >totalPrice?.centAmount || 0</span>),
+                        // Same as CartItemRow: use backend-computed price from groupedItems
+                        // item.price is now correctly set to the delegate-rate price in the hook
+                        centAmount: effectiveMainItems.reduce(
+                          (sum, i) =&gt; sum + Math.round((i.price as number) * 100) * (i.<span class="branch-0 cbranch-no" title="branch not covered" >quantity || 1),</span>
                           0,
                         ),
                         currencyCode:
@@ -715,11 +753,12 @@ const MiniBasketDropdown: React.FC&lt;MiniBasketDropdownProps&gt; = ({
                     };
 &nbsp;
                     const firstItem = groupItems[0];
-                    const assocKey = firstItem.custom?.fields?.['associationKey'] as
+                    const assocKey = firstItem.custom?.fields?.[CUSTOM_FIELD_ASSOCIATION_KEY] as
                       | string
                       | undefined;
-                    const delegateRate =
-                      (firstItem.custom?.fields?.['delegateRate'] as string | undefined) || '';
+                    const rawDelegateRate =
+                      (firstItem.custom?.fields?.[CUSTOM_FIELD_DELEGATE_RATE] as string | undefined) || '';
+                    const delegateRate = rawDelegateRate.replace(/\s+Rate$/i, '');
                     const groupKey =
                       assocKey &amp;&amp; delegateRate
                         ? `${assocKey}||${delegateRate}`
@@ -736,7 +775,7 @@ const MiniBasketDropdown: React.FC&lt;MiniBasketDropdownProps&gt; = ({
                     return (
                       &lt;div
                         key={`group-${key}`}
-                        className="border border-[#DFE4EC] rounded-[4px] p-[12px] bg-white w-[326px] min-h-[102px]"
+                        className=" rounded-[4px] p-[12px] bg-white w-[326px] min-h-[102px]"
                       &gt;
                         &lt;LineItem
                           item={compositeItemWithRate}
@@ -778,7 +817,7 @@ const MiniBasketDropdown: React.FC&lt;MiniBasketDropdownProps&gt; = ({
       &lt;/div&gt;
 &nbsp;
       {/* ── Section C: Footer / Order Summary (min-h 123px) ── */}
-      &lt;div className="flex-shrink-0 w-[350px] border-t border-gray-200 px-[12px] py-[12px] min-h-[123px] box-border"&gt;
+      &lt;div className="flex-shrink-0 w-[350px] bg-white rounded-t-[6px] px-[12px] py-[12px] min-h-[123px] box-border shadow-[0_-1px_20px_0_rgba(0,0,0,0.08)]"&gt;
         &lt;OrderSummary items={items} eventKey={eventKey} onAction={onClose} /&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -793,7 +832,7 @@ export default MiniBasketDropdown;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-18T10:53:16.569Z
+                at 2026-06-19T12:12:14.903Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
